@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>Dante</title>
+
+    <!-- Vendors -->
+    <link rel="stylesheet" type="text/css" href="Promin-master/demos/css/bootstrap.min.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Promin -->
+    <link rel="stylesheet" type="text/css" href="Promin-master/css/promin.css" />
+    <script type="text/javascript" src="Promin-master/js/jquery.promin.js"></script>
+
+    <link href="icheck/skins/flat/red.css" rel="stylesheet">
+    <script src="icheck/icheck.js"></script>
+
+    <!-- Custom -->
+    <link rel="stylesheet" type="text/css" href="Promin-master/demos/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="windows.css" />
+
+
+  <script type="text/javascript" src="windows.js"></script>
+
+    <script>
+
+    $(document).ready(function(){
+
+        $('.window').windows({
+            snapping: true,
+            snapSpeed: 500,
+            snapInterval: 1100,
+            onScroll: function(scrollPos){
+                // scrollPos:Number
+            },
+            onSnapComplete: function($el){
+                // after window ($el) snaps into place
+            },
+            onWindowEnter: function($el){
+                // when new window ($el) enters viewport
+            }
+        })
+
+    });
+
+$(document).ready(function(){
+
+// for the checkboxes
+  $(document).ready(function () {
+      $('input[class="box"]').on('ifClicked', function (event) {
+          console.log("smeep " + this.value);
+          console.log( $(this).prop('checked'));
+          console.log("hun?");
+      });
+
+  });
+
+  // for radio buttons
+  $(document).ready(function () {
+      $('input[type="radio"]').on('ifClicked', function (event) {
+          console.log("smeep " + this.value);
+          console.log( $(this).val());
+          console.log("hun?");
+      });
+
+  });
+
+});
+</script>
+</head>
+
+<style>
+body, .container {
+  background-color: #BF211E;
+}
+
+input {
+  display: grid;
+
+}
+
+.checkbox, .radio
+{
+  display: grid;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+#card {
+  background-color: #eeeeee;
+}
+
+input[type='checkbox'] {
+  width: 40px;
+  height: 40px;
+}
+
+
+
+</style>
+
+
+<body>
+
+<section class="window">
+<div class="container">
+  <br> <br> <br> <br> <br> <br>
+    <div class="row noborder" id="card">
+
+        <div class="span12">
+            <h1>Dante's Inferno</h1>
+            <br>
+
+            <div id="demo">
+                <form action="#end" id="form" enctype="application/x-www-form-urlencoded" method="post">
+                    <div class="pm-step">
+                        <p>What is your name?</p>
+                        <input type="text" name="name" autocomplete="off" placeholder="your name here" />
+                    </div>
+
+                    <div class="pm-step">
+                      <p> What is your religion? </p>
+                      <div class="radio">
+                      <label> <input type="radio" name="iCheck" checked> Catholicism </label>
+                      <label> <input type="radio" name="iCheck"> Islam </label>
+                      <label> <input type="radio" name="iCheck"> Judaism </label>
+                      <label> <input type="radio" name="iCheck"> Buddhism </label>
+                    </div>
+                    </div>
+
+
+                    <div class="pm-step">
+                        <p>Check all sins you have committed</p>
+                        <div class="form-group">
+                          <div class="checkbox">
+                        <label>  <input name="iCheck" class="box" type="checkbox" id="murder" > Murder  </label>
+                        </div>
+
+                      <div class="checkbox">
+                        <label>  <input name="iCheck" class="box" type="checkbox" > Larceny  </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>  <input name="iCheck" class="box" type="checkbox" > Forgery  </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>  <input name="iCheck" class="box" type="checkbox" > Betrayal  </label>
+                      </div>
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="pm-step">
+                        <p>Is there something you would like to say to save your mortal soul?<br /><span class="muted">Protip: <code>shift + return</code> for a new line.</span></p>
+                        <textarea name="body" autocomplete="off"></textarea>
+                    </div>
+
+                    <p class="progress-bar">
+                        <span class="bar"></span>
+                    </p>
+
+                    <p class="muted"><input type="button" id="navigation" value="Next step" /> or press tab</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="window">
+<div = "container">
+
+<div class= "jumbotron" id="end">
+<br> <br><br> <br> <br> <br>
+<h1>
+You're in Hell!
+</h1>
+</div>
+
+</div>
+</section>
+
+
+<!-- for iCheck-->
+<script>
+$(document).ready(function(){
+
+
+  $('input').on('ifToggled', function(event){
+    console.log(event.type + ' callback');
+    var value = $(this).val();
+    console.log(value);
+  });
+
+
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_flat-red',
+    radioClass: 'iradio_flat-red'
+  });
+
+  $('#form :checkbox').change(function() {
+      // this represents the checkbox that was checked
+      // do something with it
+      console.log("meep meep");
+  });
+  console.log($('#navigation').val());
+
+
+
+
+});
+</script>
+
+<script type="text/javascript">
+    // Cache the form
+    var $form = $('#form');
+
+    // Stuff for the progress bar
+    var $bar = $('.progress-bar .bar');
+    var steps = $('.pm-step').length;
+
+    // Initialize Promin
+    $form.promin({
+        // Want to update the bar on every change
+        events: {
+            change: function(i) {
+                $bar.css('width', (i / steps * 100) + '%');
+            }
+        }
+    });
+
+    // Tell the button to go to the next step
+    $('#navigation').on('click', function() {
+        $form.promin('next');
+    });
+</script>
+
+</body>
+</html>

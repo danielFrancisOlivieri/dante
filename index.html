@@ -31,6 +31,8 @@
 
 
   <!-- firebase -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+<script language="javascript" src="libraries/p5.dom.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
   <script language="javascript" type="text/javascript" src="data.js"></script>
 
@@ -145,7 +147,7 @@ input[type='checkbox'] {
             <br>
 
             <div id="demo">
-                <form  action="#end" id="form" enctype="application/x-www-form-urlencoded" method="post">
+                <form  id="form" enctype="application/x-www-form-urlencoded" method="post">
                     <div class="pm-step">
                         <p>What is your name?</p>
                         <input id="name" type="text" name="name" autocomplete="off" placeholder="your name here" />

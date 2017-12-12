@@ -92,6 +92,8 @@ var data = {
 
   ref.push(data);
 
+
+/*
   $(document).on('click', 'a[href^="#end"]', function (event) {
     event.preventDefault();
 
@@ -99,6 +101,8 @@ var data = {
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 5000);
 });
+
+*/
 }
 
 function increaseScore() {

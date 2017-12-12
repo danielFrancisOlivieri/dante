@@ -196,7 +196,7 @@ input[type='checkbox'] {
                         <span class="bar"></span>
                     </p>
 
-                    <p class="muted"><input type="button" id="navigation" value="Next step" /> or press tab</p>
+                    <p class="muted"><input type="button" class="submitButton" id="navigation" value="Next step" /> or press tab</p>
                 </form>
             </div>
         </div>
@@ -234,6 +234,10 @@ console.log( $('input[name=iCheck]:checked').val());
 
 
   $("#navigation").attr("onClick", "submitData();");
+
+  console.log(  $(".submitButton").attr("id")  );
+    $(".submitButton").removeAttr("id");
+    console.log(  $(".submitButton").attr("id")  );
 //  $("#navigation").attr("href", "#end");
 
 });

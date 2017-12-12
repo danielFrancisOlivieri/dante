@@ -5,7 +5,9 @@
 
     <title>Dante</title>
 
+<!-- w3 CSS -->
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- icon -->
 
@@ -36,6 +38,11 @@
   <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
   <script language="javascript" type="text/javascript" src="data.js"></script>
 
+  <!-- gridly -->
+
+<script src="jquery.gridly.js" type="text/javascript"></script>
+<link href="jquery.gridly.css" rel="stylesheet" type="text/css" />
+
 <!--
 
 
@@ -60,24 +67,7 @@ Because he casts himself as the main character we get the whole enormities of He
 
     <script>
 
-    $(document).ready(function(){
 
-        $('.window').windows({
-            snapping: true,
-            snapSpeed: 500,
-            snapInterval: 1100,
-            onScroll: function(scrollPos){
-                // scrollPos:Number
-            },
-            onSnapComplete: function($el){
-                // after window ($el) snaps into place
-            },
-            onWindowEnter: function($el){
-                // when new window ($el) enters viewport
-            }
-        })
-
-    });
 
 $(document).ready(function(){
 
@@ -106,7 +96,7 @@ $(document).ready(function(){
 </head>
 
 <style>
-body, .container {
+.container {
   background-color: #BF211E;
 }
 
@@ -130,10 +120,46 @@ input[type='checkbox'] {
   height: 40px;
 }
 
+body, #end{
+
+background-color: #011627;
+
+}
+
+p {
+  text-align: left;
+
+}
 
 
+  .gridly {
+    position: relative;
+    width: 960px;
+    margin: 60px;
+  }
+  .brick {
+    background-color: #BF211E;
+  }
+  .brick.small {
+    width: 140px;
+    height: 140px;
+  }
+  .brick.large {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ourName {
+    color: white;
+  }
+
+  #mainHeader {
+
+    margin-left: auto;
+    text-align: left;
+
+  }
 </style>
-
 
 <body>
 
@@ -143,18 +169,20 @@ input[type='checkbox'] {
     <div class="row noborder" id="card">
 
         <div class="span12">
-            <h1>Dante's Inferno</h1>
+          <center>
+            <h1 id="mainHeader" >Dante's Inferno</h1>
+          </center>
             <br>
 
             <div id="demo">
                 <form  id="form" >
                     <div class="pm-step">
-                        <p>What is your name?</p>
-                        <input id="name" type="text" name="name" autocomplete="off" placeholder="your name here" />
+                        <p>Name the person you would like to damn</p>
+                        <input id="name" type="text" name="name" autocomplete="off" placeholder="name here" />
                     </div>
 
                     <div class="pm-step">
-                      <p> Which sin describes you? </p>
+                      <p> Which sin describes them? </p>
                       <div class="radio" id="radioDiv" >
                       <label> <input type="radio" name="radioButton" sin="envy" checked> Envy </label>
                       <label> <input type="radio" name="radioButton" sin="gluttony"> Gluttony </label>
@@ -168,7 +196,7 @@ input[type='checkbox'] {
 
 
                     <div class="pm-step">
-                        <p>Check all sins you have committed</p>
+                        <p>Check all sins they have committed</p>
                         <div class="form-group">
                           <div class="checkbox">
                         <label>  <input name="iCheck" class="box" type="checkbox" value="murder" id="murder" > Murder  </label>
@@ -188,7 +216,7 @@ input[type='checkbox'] {
                     </div>
 
                     <div class="pm-step">
-                        <p>Is there something you would like to say to save your mortal soul?<br /><span class="muted">Protip: <code>shift + return</code> for a new line.</span></p>
+                        <p>Briefly describe the torment for them to endure <br /><span class="muted">Protip: <code>shift + return</code> for a new line.</span></p>
                         <textarea id="mortalSoul" name="body" autocomplete="off"></textarea>
                     </div>
 
@@ -214,6 +242,20 @@ input[type='checkbox'] {
 <h1>
 Abandon All Hope Ye Who Enter
 </h1>
+
+<center>
+<div class="gridly">
+
+
+</div>
+</center>
+<script>
+  $('.gridly').gridly({
+    base: 60, // px
+    gutter: 20, // px
+    columns: 12
+  });
+</script>
 </div>
 
 </div>
@@ -238,14 +280,7 @@ console.log( $('input[name=iCheck]:checked').val());
     console.log(  $(".submitButton").attr("id")  );
 
 
-
-
-//  $("#navigation").attr("href", "#end");
-
 });
-
-
-
 
 
   $('input').iCheck({

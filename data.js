@@ -13,6 +13,9 @@ var chosenSin = "envy";
 
 function setup() {
   console.log("meep meep");
+
+
+
   canvas = createCanvas(100, 100);
   score = 0;
   createP('Click the button to get points.')
@@ -35,11 +38,69 @@ function setup() {
   firebase.initializeApp(config);
   console.log(firebase);
   database = firebase.database();
+
+
+  var ref = database.ref('indexOfSins');
+
+//recieving data back
+  ref.on( 'value', gotData, errData );
+
+function gotData(data) {
+
+
+$(".gridly").empty();
+
+  var brick;
+   var brickPart1 = "<div class='brick large w3-card-4'>";
+   var brickPart2 = "<div class='delete'></div></div>";
+
+
+  console.log(data.val());
+  var indexOfSins = data.val();
+  var keys = Object.keys(indexOfSins);
+  console.log(keys);
+
+  for(var i = 0; i < keys.length; i++) {
+    var k = keys[i];
+    var names = indexOfSins[k].name;
+    var allSins = indexOfSins[k].sin;
+    var sinArray = indexOfSins[k].checkBoxSins;
+    var mortalSoul = indexOfSins[k].mortalSoul;
+
+    //mortalSoul
+
+
+    var card = "<img src=\"https://pmcdeadline2.files.wordpress.com/2017/01/stephen-colbert-5.jpg?w=605\" alt=\"Norway\" style=\"width:100%\"> <div class=\"w3-container w3-center\"> <br> <center> <p class=\"ourName\" >"
+    + names  + "<br>" + allSins + "<br>" + sinArray + "<br>" + mortalSoul + "</p> </center> </div>";
+
+brick = brickPart1 + card + brickPart2;
+
+
+
+event.preventDefault();
+event.stopPropagation();
+$('.gridly').append(brick);
+console.log(names, allSins);
+console.log(sinArray);
+
+  }
+
+  return $('.gridly').gridly();
+
+}
+
+function errData(err) {
+  console.log('Error!');
+  console.log(err);
+}
+
+
 }
 
 function test() {
 console.log("test");
 };
+
 
 // for getting the value of the radio buttons
 $(document).ready(function(){
@@ -62,6 +123,8 @@ $('input').on('ifToggled', function(event){
 function submitData() {
   console.log("spleep" + $("#name").val());
 
+
+
 var ourName = $("#name").val(); // intializes ourName to the value they put for their name
 
 console.log( $('input[name=iCheck]:checked').val());
@@ -79,7 +142,9 @@ $('input[name="iCheck"]:checked').each(function() {
       console.log(checkBoxSins);
 });
 
-  var ref = database.ref('scores');
+  var ref = database.ref('indexOfSins');
+
+
 
 var data = {
   name: $("#name").val(),
@@ -92,11 +157,13 @@ var data = {
 
   ref.push(data);
 
+
+/*
   $('html, body').animate({
       scrollTop: $("#end").offset().top
   }, 2000);
 
-/*
+
   $(document).on('click', 'a[href^="#end"]', function (event) {
     event.preventDefault();
 

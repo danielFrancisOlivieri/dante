@@ -92,6 +92,9 @@ var data = {
 
   ref.push(data);
 
+  $('html, body').animate({
+      scrollTop: $("#end").offset().top
+  }, 2000);
 
 /*
   $(document).on('click', 'a[href^="#end"]', function (event) {

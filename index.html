@@ -5,10 +5,12 @@
 
     <title>Dante</title>
 
-	    <!-- icon -->
+
+
+    <!-- icon -->
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	
+
     <!-- Vendors -->
     <link rel="stylesheet" type="text/css" href="Promin-master/demos/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -24,8 +26,37 @@
     <link rel="stylesheet" type="text/css" href="Promin-master/demos/css/style.css" />
     <link rel="stylesheet" type="text/css" href="windows.css" />
 
-
+<!-- windows -->
   <script type="text/javascript" src="windows.js"></script>
+
+
+  <!-- firebase -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <script language="javascript" src="libraries/p5.dom.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+  <script language="javascript" type="text/javascript" src="data.js"></script>
+
+<!--
+
+
+                                       _      _          _ _
+                                      | |    | |        | | |
+ _ __   ___ _ __ ___  ___  _ __   __ _| |    | |__   ___| | |
+| '_ \ / _ \ '__/ __|/ _ \| '_ \ / _` | |    | '_ \ / _ \ | |
+| |_) |  __/ |  \__ \ (_) | | | | (_| | |    | | | |  __/ | |
+| .__/ \___|_|  |___/\___/|_| |_|\__,_|_|    |_| |_|\___|_|_|
+| |
+|_|
+
+
+	Dante makes the cosmic sublimeness of the afterworld an intensely personal thing.
+Because he casts himself as the main character we get the whole enormities of Heaven, Hell, and Purgatory filtered through a voice that feels human and real. It feels like we’re on vacation with him. However, the direction of this particular vacation is not out, but in. To quote Joseph Campbell, “All the gods, all the heavens, all the hells, are within you.” Though written about a millennium after Dante finished the Divine Comedy, I think this could work well as a thesis statement for it. When Dante makes his way through the massive valleys full of bodies being chopped up and caverns of people frozen in ice he is really walking through himself. The seething masses of churning bodies, the fields of people charging around while pestered with wasps, the vision of God as three intersecting circles, these are all enclosed within his own head.
+	With that in mind, I wanted to create a website that would be personal to the reader and (hopefully) inspires some amount of introspection. Also, I want it to be funny. After all, this is a comedy. Now, a shirt should know it’s a shirt, a painting should know it’s a painting, a short stories should know it’s a short story. And so too should a website know that it’s a website. I wanted to make something that would use the special abilities a website has in order to further the effect of the work. I wanted to play with the form of a website. Fittingly, I’ve decided to do this in the form of a form. By using a form, I’ve been able to tap into one of the defining features of the internet: interactivity. A book may be able to ask you questions, but it’s difficult for it to do anything with the answers. A website is a little different. You can have a back and forth with it that isn’t possible with a book.
+
+
+	One of the things that fascinates me about the Divine Comedy is that Dante chose to put himself as the main character. This makes the work oddly personal even as it tackles concepts of such monumental and cosmic significance. It is not just a tour of the afterworld, but it’s his tour. We’re going on vacation with Dante and it’s going to be an odd one indeed. However, for the website I’ve so far ignored the external journey. Instead, I’ve tried to focus on the psychological/religious journey. This is partially because it would be really difficult to illustrate all the different locations of the Divine Comedy, with its massive valleys full of bodies being chopped up and caverns of people frozen in ice. My artistic abilities would fall grievously short of Dante’s power of description. But this choice to not show the various afterworlds is (I hope) more than a simple cop out. It’s also because I don’t want to take the user on a passive journey. I want them engaged with this, asking themselves about which afterlife they’d belong in. The goal isn’t to push people into pits of fire, the goal is to push people into themselves. Also, I want to play on the conventions set up by Buzzfeed, Clickhole, and other sites that offer quizzes. I want to be funny like them.
+
+-->
 
     <script>
 
@@ -72,18 +103,6 @@ $(document).ready(function(){
 
 });
 </script>
-    
-    <!--
-
-	Dante makes the cosmic sublimeness of the afterworld an intensely personal thing. 
-Because he casts himself as the main character we get the whole enormities of Heaven, Hell, and Purgatory filtered through a voice that feels human and real. It feels like we’re on vacation with him. However, the direction of this particular vacation is not out, but in. To quote Joseph Campbell, “All the gods, all the heavens, all the hells, are within you.” Though written about a millennium after Dante finished the Divine Comedy, I think this could work well as a thesis statement for it. When Dante makes his way through the massive valleys full of bodies being chopped up and caverns of people frozen in ice he is really walking through himself. The seething masses of churning bodies, the fields of people charging around while pestered with wasps, the vision of God as three intersecting circles, these are all enclosed within his own head. 
-	With that in mind, I wanted to create a website that would be personal to the reader and (hopefully) inspires some amount of introspection. Also, I want it to be funny. After all, this is a comedy. Now, a shirt should know it’s a shirt, a painting should know it’s a painting, a short stories should know it’s a short story. And so too should a website know that it’s a website. I wanted to make something that would use the special abilities a website has in order to further the effect of the work. I wanted to play with the form of a website. Fittingly, I’ve decided to do this in the form of a form. By using a form, I’ve been able to tap into one of the defining features of the internet: interactivity. A book may be able to ask you questions, but it’s difficult for it to do anything with the answers. A website is a little different. You can have a back and forth with it that isn’t possible with a book. 
-
-
-	One of the things that fascinates me about the Divine Comedy is that Dante chose to put himself as the main character. This makes the work oddly personal even as it tackles concepts of such monumental and cosmic significance. It is not just a tour of the afterworld, but it’s his tour. We’re going on vacation with Dante and it’s going to be an odd one indeed. However, for the website I’ve so far ignored the external journey. Instead, I’ve tried to focus on the psychological/religious journey. This is partially because it would be really difficult to illustrate all the different locations of the Divine Comedy, with its massive valleys full of bodies being chopped up and caverns of people frozen in ice. My artistic abilities would fall grievously short of Dante’s power of description. But this choice to not show the various afterworlds is (I hope) more than a simple cop out. It’s also because I don’t want to take the user on a passive journey. I want them engaged with this, asking themselves about which afterlife they’d belong in. The goal isn’t to push people into pits of fire, the goal is to push people into themselves. Also, I want to play on the conventions set up by Buzzfeed, Clickhole, and other sites that offer quizzes. I want to be funny like them. 
-
-
--->
 </head>
 
 <style>
@@ -128,19 +147,22 @@ input[type='checkbox'] {
             <br>
 
             <div id="demo">
-                <form action="#end" id="form" enctype="application/x-www-form-urlencoded" method="post">
+                <form  action="#end" id="form" enctype="application/x-www-form-urlencoded" method="post">
                     <div class="pm-step">
                         <p>What is your name?</p>
-                        <input type="text" name="name" autocomplete="off" placeholder="your name here" />
+                        <input id="name" type="text" name="name" autocomplete="off" placeholder="your name here" />
                     </div>
 
                     <div class="pm-step">
-                      <p> What is your religion? </p>
-                      <div class="radio">
-                      <label> <input type="radio" name="iCheck" checked> Catholicism </label>
-                      <label> <input type="radio" name="iCheck"> Islam </label>
-                      <label> <input type="radio" name="iCheck"> Judaism </label>
-                      <label> <input type="radio" name="iCheck"> Buddhism </label>
+                      <p> Which sin describes you? </p>
+                      <div class="radio" id="radioDiv" >
+                      <label> <input type="radio" name="radioButton" sin="envy" checked> Envy </label>
+                      <label> <input type="radio" name="radioButton" sin="gluttony"> Gluttony </label>
+                      <label> <input type="radio" name="radioButton" sin="pride" > Pride </label>
+                      <label> <input type="radio" name="radioButton" sin="lust"> Lust </label>
+                      <label> <input type="radio" name="radioButton" sin="wrath"> Wrath </label>
+                      <label> <input type="radio" name="radioButton" sin="sloth"> Sloth </label>
+                      <label> <input type="radio" name="radioButton" sin="greed"> Greed </label>
                     </div>
                     </div>
 
@@ -149,17 +171,17 @@ input[type='checkbox'] {
                         <p>Check all sins you have committed</p>
                         <div class="form-group">
                           <div class="checkbox">
-                        <label>  <input name="iCheck" class="box" type="checkbox" id="murder" > Murder  </label>
+                        <label>  <input name="iCheck" class="box" type="checkbox" value="murder" id="murder" > Murder  </label>
                         </div>
 
                       <div class="checkbox">
-                        <label>  <input name="iCheck" class="box" type="checkbox" > Larceny  </label>
+                        <label>  <input name="iCheck" class="box" type="checkbox" value="larceny" > Larceny  </label>
                       </div>
                       <div class="checkbox">
-                        <label>  <input name="iCheck" class="box" type="checkbox" > Forgery  </label>
+                        <label>  <input name="iCheck" class="box" type="checkbox" value="forgery"> Forgery  </label>
                       </div>
                       <div class="checkbox">
-                        <label>  <input name="iCheck" class="box" type="checkbox" > Betrayal  </label>
+                        <label>  <input name="iCheck" class="box" type="checkbox" value="betrayal" > Betrayal  </label>
                       </div>
                         </div>
                         <br>
@@ -167,7 +189,7 @@ input[type='checkbox'] {
 
                     <div class="pm-step">
                         <p>Is there something you would like to say to save your mortal soul?<br /><span class="muted">Protip: <code>shift + return</code> for a new line.</span></p>
-                        <textarea name="body" autocomplete="off"></textarea>
+                        <textarea id="mortalSoul" name="body" autocomplete="off"></textarea>
                     </div>
 
                     <p class="progress-bar">
@@ -182,30 +204,42 @@ input[type='checkbox'] {
 </div>
 </section>
 
+
+<!--
 <section class="window">
 <div = "container">
 
 <div class= "jumbotron" id="end">
 <br> <br><br> <br> <br> <br>
 <h1>
-You're in Hell!
+Abandon All Hope Ye Who Enter
 </h1>
 </div>
 
 </div>
 </section>
 
+-->
+
 
 <!-- for iCheck-->
 <script>
 $(document).ready(function(){
 
+$("#mortalSoul").focus(function(){
 
-  $('input').on('ifToggled', function(event){
-    console.log(event.type + ' callback');
-    var value = $(this).val();
-    console.log(value);
-  });
+console.log( $('input[name=iCheck]:checked').val());
+
+  $("#navigation").val("submit");
+
+
+  $("#navigation").attr("onClick", "submitData();");
+//  $("#navigation").attr("href", "#end");
+
+});
+
+
+
 
 
   $('input').iCheck({

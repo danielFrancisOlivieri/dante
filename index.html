@@ -5,6 +5,14 @@
 
     <title>Dante</title>
 
+    <!-- for typescript -->
+    <script src="typed.min.js" type="text/javascript"></script>
+     <script src="demos.js"></script>
+     <link href="demos.css" rel="stylesheet"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
 <!-- w3 CSS -->
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -23,6 +31,7 @@
 
     <link href="flat/red.css" rel="stylesheet">
     <script src="icheck.js"></script>
+    <script src="starscroll.js"></script>
 
     <!-- Custom -->
     <link rel="stylesheet" type="text/css" href="Promin-master/demos/css/style.css" />
@@ -43,10 +52,9 @@
 <script src="jquery.gridly.js" type="text/javascript"></script>
 <link href="jquery.gridly.css" rel="stylesheet" type="text/css" />
 
-<!--
 
 
-                                       _      _          _ _
+<!--                                       _      _          _ _
                                       | |    | |        | | |
  _ __   ___ _ __ ___  ___  _ __   __ _| |    | |__   ___| | |
 | '_ \ / _ \ '__/ __|/ _ \| '_ \ / _` | |    | '_ \ / _ \ | |
@@ -165,13 +173,38 @@ p {
     text-align: left;
 
   }
+
+  #forForm {
+    background-color: #bf211e;
+  }
+  #start {
+    background-color: #011627;
+  }
+
+  .window {
+    background-image: url("pngDevil.jpg");
+  }
+
+  #abandon {
+    font-size: 52px;
+    color: #bf211e;
+  }
 </style>
 
 <body>
+  <section class="window" id="start">
+<br> <br> <br>
+<h1 id="abandon">Abandon All Hope, Ye Who Enter Here</h1>
+<img src="pngDevil.png" title="Charon" >
 
-<section class="window">
+
+</section>
+
+<section class="window" id="forForm">
 <div class="container">
-  <br> <br> <br> <br> <br> <br>
+  <br> <br> <br>
+
+  <br> <br> <br>
     <div class="row noborder" id="card">
 
         <div class="span12">
@@ -232,7 +265,7 @@ p {
 
                     <div class="pm-step">
                         <p>Briefly describe the torment for them to endure <br /><span class="muted">Protip: <code>shift + return</code> for a new line.</span></p>
-                        <textarea id="mortalSoul" name="body" autocomplete="off"></textarea>
+                        <textarea id="mortalSoul" name="body" autocomplete="off" maxlength="70"></textarea>
                     </div>
 
                     <p class="progress-bar">
@@ -247,15 +280,13 @@ p {
 </div>
 </section>
 
-
-
 <section class="window" id="endWindow">
 <div = "container">
 
 <div class= "jumbotron" id="end">
 <br> <br><br> <br> <br> <br>
 <h1>
-Abandon All Hope Ye Who Enter
+The Ninth Circle
 </h1>
 
 <center>
@@ -276,10 +307,31 @@ Abandon All Hope Ye Who Enter
 </div>
 </section>
 
+<section>
+
+
+
+</section>
+
+
+
 
 <!-- for iCheck-->
 <script>
+
+
 $(document).ready(function(){
+
+// typed
+  $(function(){
+              $("#abandon").typed({
+                strings: [ "Abandon all Hope, Ye Who Enter here.^1000", "Scroll down to descend into Hell."],
+                typeSpeed: 0, cursorChar: ""
+              })
+          });
+
+// starfield
+  $("#heaven").starscroll(16,3,50,5);
 
 $("#mortalSoul").focus(function(){
 
@@ -312,10 +364,65 @@ console.log( $('input[name=iCheck]:checked').val());
 
 
 
-
-
 });
+
+
+/*
+// the Myth of Sisyphus Translated to Javascript
+
+
+This story has been poured from one language into the next for at least a dozen centuries
+So I figured a transfer into Javascript, a language rippling with inorganic muscles, might be worth while.
+After all, every reading is a translation.
+
+// so here's our hero
+var sisyphus = {
+    name: "Sisyphus",
+    profession: "King of Corinth (retired)",
+    hobbies: "Involuntary body-building, cheating Death himself, kayaking",
+    strength: 15,
+    push: function(thingToPush) {
+        return this.strength - thingToPush;
+    }
+};
+
+// this is the biggest boulder that Hades had lying around
+var boulder = 14;
+
+// and this is the hill that Sisy needs to get the boulder to the top of
+// its height is equal to Belphegor's prime (turns out Hades is a huge numbers nerd)
+var hill = 1000000000000066600000000000001;
+
+// we’ll use this to see how far he’s managed to push the boulder up the hill
+var progress = 0;
+
+while (progress < hill) {
+
+    // now let's watch Sisy at work
+    progress = progress + sisyphus.push(boulder);
+
+    if (progress == hill) {
+        // of course you can guess what happens as soon as he gets done
+        boulder = 0;
+    }
+}
+
+/*
+After finishing this translation, I ran it.
+But my computer was too smart to run it.
+It recognized the infinite loop and froze,
+Its metaphorical arms flailing in the air.
+Javascript’s technological muscle can conjure
+Whole galaxies of bytes and pixels in nanoseconds.
+But it can’t move Sisyphus’ boulder even once.
+It appears that the ability to work on an unfinishable task
+Belongs only to humans.
+*/
+
+
+
 </script>
+
 
 <script type="text/javascript">
     // Cache the form

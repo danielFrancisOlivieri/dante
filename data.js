@@ -65,13 +65,70 @@ $(".gridly").empty();
     var names = indexOfSins[k].name;
     var allSins = indexOfSins[k].sin;
     var sinArray = indexOfSins[k].checkBoxSins;
+    var sins = "mediocracy";
+
+    if ( sinArray != null )
+    {
+        sins = sinArray.toString();
+        sins.replace(",", " ");
+        console.log(sins);
+    }
+
+
+/*
+if ( indexOfSins[k].checkBoxSins != null )
+{
+
+  for(var m = 0; m < indexOfSins[k].checkBoxSins.length; i++){
+  console.log(indexOfSins[k].checkBoxSins[m]);
+    sins = sins + " " + indexOfSins[k].checkBoxSins[m];
+
+   }
+
+}
+
+*/
+
+
     var mortalSoul = indexOfSins[k].mortalSoul;
 
     //mortalSoul
 
+  var random =  Math.floor((Math.random() * 5));
 
-    var card = "<img src=\"https://pmcdeadline2.files.wordpress.com/2017/01/stephen-colbert-5.jpg?w=605\" alt=\"Norway\" style=\"width:100%\"> <div class=\"w3-container w3-center\"> <br> <center> <p class=\"ourName\" >"
-    + names  + "<br>" + allSins + "<br>" + sinArray + "<br>" + mortalSoul + "</p> </center> </div>";
+  console.log(random);
+
+  switch(random) {
+      case 0:
+      var card = "<img src=\"img/avarice.jpg\" alt=\"Norway\" style=\"width:100%\"> <div class=\"w3-container w3-center\"> <br> <center> <p class=\"ourName\" >"
+      + names  + "\n" + allSins + "\n" + sins + "\n" + mortalSoul + "</p> </center> </div>";
+          break;
+      case 1:
+      var card = "<img src=\"img/blasphemy.jpg\" alt=\"Norway\" style=\"width:100%\"> <div class=\"w3-container w3-center\"> <br> <center> <p class=\"ourName\" >"
+      + names  + "\n" + allSins + "\n" + sins + "\n" + mortalSoul + "</p> </center> </div>";
+          break;
+      case 2:
+          var card = "<img src=\"img/avariciousAndProdigious.jpg\" alt=\"Norway\" style=\"width:100%\"> <div class=\"w3-container w3-center\"> <br> <center> <p class=\"ourName\" >"
+          + names  + "\n" + allSins + "\n" + sins + "\n" + mortalSoul + "</p> </center> </div>";
+        break;
+
+
+        case 3:
+        var card = "<img src=\"img/corrupt.jpg\" alt=\"Norway\" style=\"width:100%\"> <div class=\"w3-container w3-center\"> <br> <center> <p class=\"ourName\" >"
+        + names  + "\n" + allSins + "\n" + sins + "\n" + mortalSoul + "</p> </center> </div>";
+            break;
+
+            case 4:
+            var card = "<img src=\"img/penitent.jpg\" alt=\"Norway\" style=\"width:100%\"> <div class=\"w3-container w3-center\"> <br> <center> <p class=\"ourName\" >"
+            + names  + "\n" + allSins + "\n" + sins + "\n" + mortalSoul + "</p> </center> </div>";
+                break;
+
+      default:
+      var card = "<img src=\"img/corrupt.jpg\" alt=\"Norway\" style=\"width:100%\"> <div class=\"w3-container w3-center\"> <br> <center> <p class=\"ourName\" >"
+      + names  + "\n" + allSins + "\n" + sins + "\n" + mortalSoul + "</p> </center> </div>";
+  }
+
+
 
 brick = brickPart1 + card + brickPart2;
 
@@ -157,22 +214,11 @@ var data = {
 
   ref.push(data);
 
+// scroll down to the next anchor points
 
-/*
-  $('html, body').animate({
-      scrollTop: $("#end").offset().top
-  }, 2000);
+var element_to_scroll_to = document.getElementById('endWindow');
 
-
-  $(document).on('click', 'a[href^="#end"]', function (event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 5000);
-});
-
-*/
+element_to_scroll_to.scrollIntoView();
 }
 
 function increaseScore() {
